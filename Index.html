@@ -1,61 +1,100 @@
 <!DOCTYPE html>
-  <html lang="es">
-    <head>
+<html lang="es">
+<head>
     <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Simulación de Error Tipo I</title>
-        <link rel="stylesheet" href="styles.css">
-          </head>
-          <body>
-          <div class="container">
-            <header>
-            <h1>Simulación de Error Tipo I</h1>
-            <p>Herramienta para analizar el Error Tipo I en diseños de dos grupos</p>
-            </header>
-            
-            <main>
-            <section class="input-section">
-              <h2>Parámetros de Simulación</h2>
-              <form id="simulationForm">
-                <div class="form-group">
-                  <label for="designType">Tipo de Diseño:</label>
-                    <select id="designType">
-                      <option value="paired">Apareado</option>
-                        <option value="independent">Independiente</option>
-                          </select>
-                          </div>
-                          
-                          <div class="form-group">
-                            <label for="n1">Tamaño Muestra Grupo 1:</label>
-                              <input type="number" id="n1" value="30" min="2">
-                                </div>
-                                
-                                <div class="form-group">
-                                  <label for="n2">Tamaño Muestra Grupo 2:</label>
-                                    <input type="number" id="n2" value="30" min="2">
-                                      </div>
-                                      
-                                      <div class="form-group">
-                                        <label for="alpha">Nivel de Significancia:</label>
-                                          <input type="number" id="alpha" value="0.05" step="0.01" min="0" max="1">
-                                            </div>
-                                            
-                                            <button type="button" id="runSimulation">Ejecutar Simulación</button>
-                                              </form>
-                                              </section>
-                                              
-                                              <section class="results-section">
-                                                <h2>Resultados</h2>
-                                                <div id="results">
-                                                  <p>Ejecuta la simulación para ver los resultados</p>
-                                                  </div>
-                                                  </section>
-                                                  </main>
-                                                  
-                                                  <footer>
-                                                  <p>Desarrollado con ❤️ para análisis estadístico</p>
-                                                  </footer>
-                                                  </div>
-                                                  <script src="script.js"></script>
-                                                    </body>
-                                                    </html> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulación Error Tipo I: Diseño de dos Grupos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        h2 {
+            color: #34495e;
+        }
+        .features {
+            list-style-type: none;
+            padding: 0;
+        }
+        .features li {
+            margin: 10px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+        .features li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #3498db;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Simulación Error Tipo I: Diseño de dos Grupos</h1>
+        
+        <h2>Descripción</h2>
+        <p>Esta aplicación Shiny permite simular y analizar el Error Tipo I en diseños de dos grupos, tanto apareados como independientes.</p>
+
+        <h2>Características Principales</h2>
+        <ul class="features">
+            <li>Generación de datos con distribución asimétrica usando la transformación de Fleishman</li>
+            <li>Dos tipos de diseño:
+                <ul>
+                    <li>Grupos apareados</li>
+                    <li>Grupos independientes</li>
+                </ul>
+            </li>
+            <li>Comparación de diferentes pruebas estadísticas:
+                <ul>
+                    <li>Prueba t</li>
+                    <li>Prueba de Wilcoxon</li>
+                    <li>Prueba de Yuen</li>
+                    <li>Versiones bootstrap de cada prueba</li>
+                </ul>
+            </li>
+            <li>Visualización de distribuciones y resultados</li>
+        </ul>
+
+        <h2>Uso de la Aplicación</h2>
+        <ol>
+            <li>Seleccione el tipo de diseño (apareado o independiente)</li>
+            <li>Configure los parámetros de los grupos</li>
+            <li>Ajuste el número de simulaciones y el nivel de significancia</li>
+            <li>Ejecute la simulación</li>
+            <li>Analice los resultados y gráficos generados</li>
+        </ol>
+
+        <h2>Acceso al Código</h2>
+        <p>El código fuente completo de la aplicación está disponible en este repositorio de GitHub. Puede explorar, clonar o hacer fork del proyecto para adaptarlo a sus necesidades.</p>
+
+        <a href="https://github.com/jarnaugras/Simul2Grups" class="button">Ver en GitHub</a>
+    </div>
+</body>
+</html> 
