@@ -1,6 +1,24 @@
 # ==============================================================================
-# Funciones de Bootstrap
+# Funciones de Bootstrap y Generación de Datos
 # ==============================================================================
+
+#' Funciones de Bootstrap y Generación de Datos
+#' @description
+#' Conjunto de funciones para realizar bootstrap y generar datos con la transformación de Fleishman
+
+# Función para generar datos con la transformación de Fleishman
+#' @param n Tamaño de la muestra
+#' @param mean Media
+#' @param sd Desviación estándar
+#' @param skew Asimetría
+#' @param kurt Curtosis
+#' @return Vector de datos generados
+generate_fleishman <- function(n, mean, sd, skew, kurt) {
+  rnorm_data <- rnorm(n)
+  z <- (rnorm_data - mean) / sd
+  x <- mean + sd * (z + 0.5 * (z^2 - 1) * skew + (z^3 - 3*z) * (kurt / 24))
+  return(x)
+}
 
 #' Función para realizar bootstrap normal (apareados)
 #' @param data1 Primer conjunto de datos

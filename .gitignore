@@ -29,4 +29,15 @@
 
 # System files
 .DS_Store
-Thumbs.db 
+Thumbs.db
+
+# New patterns
+.env
+*.log
+/rsconnect/
+.Rproj.user/
+.Rdata
+.DS_Store
+*.rds
+temp/
+logs/ 
